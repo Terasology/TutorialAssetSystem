@@ -10,7 +10,7 @@
         "left" : "dice3",
         "right" : "dice4"
     },
-    "rotation" : "all",
+    "family" : "dice",
     "entity" : {
         "prefab" : "dice"
     }
