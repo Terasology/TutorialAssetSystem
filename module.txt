@@ -1,7 +1,7 @@
 {
     "id" : "TutorialAssetSystem",
     "version" : "1.0.0",
-    "author" : "oniatus",
+    "author" : "The Terasology Foundation",
     "displayName" : "TutorialAssetSystem",
     "description" : "Tutorial module for basic usage of assets",
     "dependencies" : [],
