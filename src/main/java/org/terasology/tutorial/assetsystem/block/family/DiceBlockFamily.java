@@ -28,6 +28,7 @@ import org.terasology.world.block.Block;
 import org.terasology.world.block.BlockBuilderHelper;
 import org.terasology.world.block.BlockUri;
 import org.terasology.world.block.family.AbstractBlockFamily;
+import org.terasology.world.block.family.BlockPlacementData;
 import org.terasology.world.block.family.RegisterBlockFamily;
 import org.terasology.world.block.loader.BlockFamilyDefinition;
 import org.terasology.world.block.shapes.BlockShape;
@@ -109,8 +110,9 @@ public class DiceBlockFamily extends AbstractBlockFamily {
                 Rotation rotation = frontSides.get(frontSide);
                 Block block = blockBuilder.constructTransformedBlock(definition, rotation,new BlockUri(getURI(),new Name(topSide.name() + "-" + frontSide.name())),this);
                 blocks.add(block);
-                if(!blockMapping.containsKey(topSide))
-                    blockMapping.put(topSide,block);
+                if (!blockMapping.containsKey(topSide)) {
+                    blockMapping.put(topSide, block);
+                }
                 if (topSide == Side.TOP && frontSide == Side.FRONT) {
                     archetype = block;
                 }
@@ -118,7 +120,10 @@ public class DiceBlockFamily extends AbstractBlockFamily {
         }
     }
 
-
+    @Override
+    public Block getBlockForPlacement(BlockPlacementData data) {
+        return blockMapping.get(data.attachmentSide);
+    }
 
     @Override
     public Block getBlockForPlacement(Vector3i location, Side attachmentSide, Side direction) {
