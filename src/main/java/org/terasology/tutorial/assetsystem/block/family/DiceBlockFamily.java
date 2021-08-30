@@ -9,7 +9,7 @@ import org.terasology.engine.math.Roll;
 import org.terasology.engine.math.Rotation;
 import org.terasology.engine.math.Side;
 import org.terasology.engine.math.Yaw;
-import org.terasology.naming.Name;
+import org.terasology.gestalt.naming.Name;
 import org.terasology.engine.world.block.Block;
 import org.terasology.engine.world.block.BlockBuilderHelper;
 import org.terasology.engine.world.block.BlockUri;

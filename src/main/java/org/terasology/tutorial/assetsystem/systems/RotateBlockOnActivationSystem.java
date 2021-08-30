@@ -34,7 +34,7 @@ public class RotateBlockOnActivationSystem extends BaseComponentSystem {
     @ReceiveEvent(components = {RotateBlockOnActivateComponent.class, BlockComponent.class})
     public void onActivate(ActivateEvent event, EntityRef entity) {
         BlockComponent blockComponent = entity.getComponent(BlockComponent.class);
-        Block block = blockComponent.block;
+        Block block = blockComponent.getBlock();
         List<Block> blocks = Lists.newArrayList(block.getBlockFamily().getBlocks());
         //-1 because we omit the block with the same rotation as the current one
         int index = random.nextInt(blocks.size() - 1);
